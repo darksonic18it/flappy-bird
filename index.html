@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Flappy Bird</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="cloud1" class="cloud"></div>
+    <div id="cloud2" class="cloud"></div>
+
+    <div id="bird">
+      <div class="eye"></div>
+      <div class="beak"></div>
+      <div class="wing" id="wing"></div>
+    </div>
+
+    <div id="score-panel">
+      <span>Score: <span id="score">0</span></span>
+      <span>High Score: <span id="high-score">0</span></span>
+    </div>
+
+    <div id="game-over-message">
+      <h1>Game Over</h1>
+      <p>Your Score: <span id="final-score">0</span></p>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+  </div>
+
+  <audio id="jump-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  <audio id="point-sound" src="https://www.soundjay.com/button/button-10.mp3" preload="auto"></audio>
+  <audio id="gameover-sound" src="https://www.soundjay.com/button/fail-buzzer-02.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

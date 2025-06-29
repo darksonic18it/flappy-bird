@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+body {
+  background-color: #8ecae6;
+  font-family: monospace;
+}
+
+#game-container {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  margin: 50px auto;
+  background-color: #219ebc;
+  border: 3px solid #333;
+  overflow: hidden;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #8ecae6 0%, #fff 100%);
+}
+
+/* BIRD */
+#bird {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #ffb703;
+  border: 2px solid #000;
+  top: 250px;
+  left: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce 0.3s infinite alternate;
+  box-shadow: inset 0 0 0 3px #fb8500;
+}
+
+.eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  left: 25px;
+  top: 8px;
+}
+
+.beak {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #ffd60a;
+  top: 14px;
+  left: 38px;
+}
+
+.wing {
+  width: 14px;
+  height: 14px;
+  background: #8d99ae;
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  border: 2px solid black;
+  animation: flap 0.4s infinite alternate;
+}
+
+@keyframes flap {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(20deg); }
+}
+
+/* PIPE DESIGN - PIXEL STYLE */
+.pipe {
+  position: absolute;
+  width: 60px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #2b9348,
+    #2b9348 10px,
+    #55a630 10px,
+    #55a630 20px
+  );
+  border: 2px solid #14532d;
+  image-rendering: pixelated;
+}
+
+.pipe-top {
+  top: 0;
+  height: var(--top-height);
+  border-bottom: 4px solid #222;
+}
+
+.pipe-bottom {
+  bottom: 0;
+  height: var(--bottom-height);
+  border-top: 4px solid #222;
+}
+
+/* SCORE */
+#score-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+/* GAME OVER BOX */
+#game-over-message {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+#game-over-message button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ffb703;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* CLOUDS (pixel-style) */
+.cloud {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  opacity: 0.8;
+  top: 50px;
+  animation: cloudMove 30s linear infinite;
+}
+
+#cloud2 {
+  top: 120px;
+  width: 100px;
+  height: 50px;
+  animation-delay: 10s;
+}
+
+@keyframes cloudMove {
+  0% { left: 420px; }
+  100% { left: -120px; }
+}
